@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bodyGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#082f49;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="windowGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shadow -->
+  <ellipse cx="410" cy="365" rx="280" ry="13" fill="#000" opacity="0.2"/>
+  
+  <!-- Main body -->
+  <path d="M100 278 L130 192 L185 168 L345 155 L475 150 L620 158 L692 188 L722 235 L730 278 L718 315 L100 315 Z" fill="url(#bodyGrad6)"/>
+  
+  <!-- Windows -->
+  <path d="M185 185 L345 170 L350 252 L180 260 Z" fill="url(#windowGrad6)" opacity="0.93"/>
+  <path d="M365 168 L505 160 L545 182 L550 252 L365 252 Z" fill="url(#windowGrad6)" opacity="0.93"/>
+  <path d="M565 182 L620 190 L655 212 L660 252 L565 252 Z" fill="url(#windowGrad6)" opacity="0.93"/>
+  
+  <!-- VW Grille - horizontal chrome bars -->
+  <rect x="108" y="218" width="50" height="55" fill="#0369a1" rx="3"/>
+  <line x1="108" y1="228" x2="158" y2="228" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="108" y1="238" x2="158" y2="238" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="108" y1="248" x2="158" y2="248" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="108" y1="258" x2="158" y2="258" stroke="#7dd3fc" stroke-width="2"/>
+  
+  <!-- VW Logo hint -->
+  <circle cx="133" cy="243" r="15" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+  
+  <!-- Headlights - IQ Light style -->
+  <path d="M162 215 L200 210 L205 268 L162 272 Z" fill="#fef9c3" opacity="0.88"/>
+  <rect x="170" y="220" width="3" height="42" fill="#fbbf24" rx="1"/>
+  <rect x="180" y="218" width="3" height="44" fill="#fbbf24" rx="1"/>
+  <rect x="190" y="216" width="3" height="46" fill="#fbbf24" rx="1"/>
+  
+  <!-- Tail lights -->
+  <path d="M705 232 L725 235 L725 275 L700 272 Z" fill="#7f1d1d" opacity="0.9"/>
+  <line x1="708" y1="238" x2="708" y2="268" stroke="#ef4444" stroke-width="4"/>
+  <line x1="718" y1="238" x2="718" y2="268" stroke="#ef4444" stroke-width="4"/>
+  
+  <!-- Wheels -->
+  <circle cx="225" cy="315" r="60" fill="#1e3a5f"/>
+  <circle cx="225" cy="315" r="48" fill="#0c4a6e"/>
+  <circle cx="225" cy="315" r="32" fill="#164e63"/>
+  <circle cx="225" cy="315" r="12" fill="#0e7490"/>
+  <!-- Elegant 5-spoke -->
+  <path d="M225 262 L232 295 L225 305 L218 295 Z" fill="#67e8f9"/>
+  <path d="M225 262 L232 295 L225 305 L218 295 Z" fill="#67e8f9" transform="rotate(72,225,315)"/>
+  <path d="M225 262 L232 295 L225 305 L218 295 Z" fill="#67e8f9" transform="rotate(144,225,315)"/>
+  <path d="M225 262 L232 295 L225 305 L218 295 Z" fill="#67e8f9" transform="rotate(216,225,315)"/>
+  <path d="M225 262 L232 295 L225 305 L218 295 Z" fill="#67e8f9" transform="rotate(288,225,315)"/>
+  
+  <circle cx="600" cy="315" r="60" fill="#1e3a5f"/>
+  <circle cx="600" cy="315" r="48" fill="#0c4a6e"/>
+  <circle cx="600" cy="315" r="32" fill="#164e63"/>
+  <circle cx="600" cy="315" r="12" fill="#0e7490"/>
+  <path d="M600 262 L607 295 L600 305 L593 295 Z" fill="#67e8f9"/>
+  <path d="M600 262 L607 295 L600 305 L593 295 Z" fill="#67e8f9" transform="rotate(72,600,315)"/>
+  <path d="M600 262 L607 295 L600 305 L593 295 Z" fill="#67e8f9" transform="rotate(144,600,315)"/>
+  <path d="M600 262 L607 295 L600 305 L593 295 Z" fill="#67e8f9" transform="rotate(216,600,315)"/>
+  <path d="M600 262 L607 295 L600 305 L593 295 Z" fill="#67e8f9" transform="rotate(288,600,315)"/>
+  
+  <!-- Chrome trim -->
+  <line x1="100" y1="270" x2="718" y2="270" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="175" y1="168" x2="665" y2="158" stroke="#7dd3fc" stroke-width="1.5"/>
+</svg>
+

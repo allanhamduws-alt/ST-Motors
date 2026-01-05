@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bodyGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b91c1c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7f1d1d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="windowGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#52525b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27272a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shadow -->
+  <ellipse cx="400" cy="360" rx="275" ry="12" fill="#000" opacity="0.22"/>
+  
+  <!-- Main body - sporty Porsche shape -->
+  <path d="M95 275 L110 200 L155 175 L320 162 L460 155 L610 162 L680 180 L720 220 L730 270 L720 308 L95 308 Z" fill="url(#bodyGrad5)"/>
+  
+  <!-- Sloped roofline - Cayenne coupe style -->
+  <path d="M155 175 L320 162 L460 155 L610 162 L640 175 L620 200 L350 195 L155 185 Z" fill="#991b1b"/>
+  
+  <!-- Windows -->
+  <path d="M165 195 L320 180 L328 248 L160 255 Z" fill="url(#windowGrad5)" opacity="0.94"/>
+  <path d="M345 178 L490 172 L530 190 L538 248 L345 248 Z" fill="url(#windowGrad5)" opacity="0.94"/>
+  <path d="M555 190 L610 195 L640 215 L645 248 L555 248 Z" fill="url(#windowGrad5)" opacity="0.94"/>
+  
+  <!-- Headlights - Porsche 4-point LED -->
+  <path d="M100 235 L145 230 L150 268 L100 272 Z" fill="#fef9c3" opacity="0.9"/>
+  <circle cx="115" cy="245" r="5" fill="#fbbf24"/>
+  <circle cx="130" cy="243" r="5" fill="#fbbf24"/>
+  <circle cx="115" cy="258" r="5" fill="#fbbf24"/>
+  <circle cx="130" cy="256" r="5" fill="#fbbf24"/>
+  
+  <!-- Tail lights - continuous strip -->
+  <path d="M700 235 L725 238 L728 275 L695 272 Z" fill="#450a0a" opacity="0.95"/>
+  <line x1="702" y1="240" x2="702" y2="268" stroke="#ef4444" stroke-width="4"/>
+  <line x1="712" y1="240" x2="712" y2="268" stroke="#ef4444" stroke-width="4"/>
+  <line x1="722" y1="240" x2="722" y2="268" stroke="#ef4444" stroke-width="4"/>
+  
+  <!-- Air intakes -->
+  <rect x="105" y="275" width="35" height="12" fill="#450a0a" rx="2"/>
+  <line x1="115" y1="278" x2="115" y2="284" stroke="#991b1b" stroke-width="1"/>
+  <line x1="125" y1="278" x2="125" y2="284" stroke="#991b1b" stroke-width="1"/>
+  <line x1="135" y1="278" x2="135" y2="284" stroke="#991b1b" stroke-width="1"/>
+  
+  <!-- Wheels - Turbo design -->
+  <circle cx="220" cy="308" r="56" fill="#27272a"/>
+  <circle cx="220" cy="308" r="45" fill="#18181b"/>
+  <circle cx="220" cy="308" r="30" fill="#3f3f46"/>
+  <circle cx="220" cy="308" r="10" fill="#27272a"/>
+  <!-- Turbine spokes -->
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(45,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(90,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(135,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(180,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(225,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(270,220,308)"/>
+  <path d="M220 258 L228 280 L220 295 L212 280 Z" fill="#71717a" transform="rotate(315,220,308)"/>
+  
+  <circle cx="595" cy="308" r="56" fill="#27272a"/>
+  <circle cx="595" cy="308" r="45" fill="#18181b"/>
+  <circle cx="595" cy="308" r="30" fill="#3f3f46"/>
+  <circle cx="595" cy="308" r="10" fill="#27272a"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(45,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(90,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(135,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(180,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(225,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(270,595,308)"/>
+  <path d="M595 258 L603 280 L595 295 L587 280 Z" fill="#71717a" transform="rotate(315,595,308)"/>
+  
+  <!-- Chrome accents -->
+  <line x1="95" y1="265" x2="720" y2="265" stroke="#a1a1aa" stroke-width="1.5"/>
+</svg>
+

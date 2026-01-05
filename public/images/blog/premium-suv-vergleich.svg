@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c1917;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#292524;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1c1917;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fcd34d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad3)"/>
+  
+  <!-- Luxury pattern -->
+  <g opacity="0.03">
+    <pattern id="luxPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30 0 L60 30 L30 60 L0 30 Z" stroke="#fff" stroke-width="0.5" fill="none"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#luxPattern)"/>
+  </g>
+  
+  <!-- Golden accents -->
+  <circle cx="1100" cy="80" r="180" fill="#f59e0b" opacity="0.05"/>
+  <circle cx="100" cy="550" r="150" fill="#ef4444" opacity="0.05"/>
+  
+  <!-- Trophy / Award icon -->
+  <g transform="translate(120, 200)">
+    <path d="M60 40 L60 80 Q 60 120, 100 120 Q 140 120, 140 80 L140 40 Z" fill="url(#gold)"/>
+    <rect x="70" y="120" width="60" height="15" fill="#b45309"/>
+    <rect x="60" y="135" width="80" height="10" rx="2" fill="#92400e"/>
+    <circle cx="100" cy="70" r="25" fill="#fef3c7" opacity="0.3"/>
+    <text x="100" y="78" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#78350f">1</text>
+    
+    <!-- Handles -->
+    <path d="M60 50 Q 30 50, 30 80 Q 30 100, 55 100" fill="none" stroke="url(#gold)" stroke-width="8"/>
+    <path d="M140 50 Q 170 50, 170 80 Q 170 100, 145 100" fill="none" stroke="url(#gold)" stroke-width="8"/>
+  </g>
+  
+  <!-- Stars -->
+  <g transform="translate(135, 370)">
+    <polygon points="25,0 31,18 50,18 35,29 41,47 25,36 9,47 15,29 0,18 19,18" fill="#fcd34d"/>
+    <polygon points="25,0 31,18 50,18 35,29 41,47 25,36 9,47 15,29 0,18 19,18" fill="#fcd34d" transform="translate(60, 0) scale(0.8)"/>
+    <polygon points="25,0 31,18 50,18 35,29 41,47 25,36 9,47 15,29 0,18 19,18" fill="#fcd34d" transform="translate(105, 0) scale(0.6)"/>
+  </g>
+  
+  <!-- Comparison bars -->
+  <g transform="translate(100, 460)">
+    <rect x="0" y="0" width="150" height="12" rx="6" fill="#44403c"/>
+    <rect x="0" y="0" width="140" height="12" rx="6" fill="url(#accent3)"/>
+    <text x="160" y="10" font-family="system-ui, sans-serif" font-size="11" fill="#a8a29e">Range Rover</text>
+    
+    <rect x="0" y="25" width="150" height="12" rx="6" fill="#44403c"/>
+    <rect x="0" y="25" width="125" height="12" rx="6" fill="#f59e0b"/>
+    <text x="160" y="35" font-family="system-ui, sans-serif" font-size="11" fill="#a8a29e">Mercedes GLE</text>
+    
+    <rect x="0" y="50" width="150" height="12" rx="6" fill="#44403c"/>
+    <rect x="0" y="50" width="130" height="12" rx="6" fill="#fbbf24"/>
+    <text x="160" y="60" font-family="system-ui, sans-serif" font-size="11" fill="#a8a29e">BMW X5</text>
+  </g>
+  
+  <!-- Text area -->
+  <text x="380" y="250" font-family="system-ui, sans-serif" font-size="58" font-weight="700" fill="#fafaf9">
+    Premium SUV
+  </text>
+  <text x="380" y="320" font-family="system-ui, sans-serif" font-size="58" font-weight="700" fill="url(#accent3)">
+    Vergleich 2026
+  </text>
+  
+  <text x="380" y="400" font-family="system-ui, sans-serif" font-size="24" fill="#a8a29e">
+    Range Rover vs. Mercedes GLE vs. BMW X5
+  </text>
+  <text x="380" y="435" font-family="system-ui, sans-serif" font-size="24" fill="#a8a29e">
+    Der ultimative Vergleichstest
+  </text>
+  
+  <!-- ST Motors Badge -->
+  <g transform="translate(1000, 520)">
+    <rect x="0" y="0" width="150" height="60" rx="8" fill="#292524" stroke="#78716c" stroke-width="1"/>
+    <text x="75" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#d6d3d1">
+      ST MOTORS
+    </text>
+    <text x="75" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#a8a29e">
+      Premium Automobile
+    </text>
+  </g>
+  
+  <!-- Accent line -->
+  <rect x="380" y="190" width="80" height="4" rx="2" fill="url(#accent3)"/>
+</svg>
+

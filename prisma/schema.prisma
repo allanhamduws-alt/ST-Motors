@@ -1,0 +1,381 @@
+// ST Motors GmbH - Prisma Schema
+// Vollständiges DMS (Dealer Management System)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// User (Benutzer)
+// ============================================
+model User {
+  id            String     @id @default(cuid())
+  email         String     @unique
+  password      String
+  name          String
+  role          Role       @default(MITARBEITER)
+  createdAt     DateTime   @default(now())
+  lastLogin     DateTime?
+  
+  vehicles      Vehicle[]
+  contracts     Contract[]
+  invoices      Invoice[]
+}
+
+enum Role {
+  ADMIN
+  MITARBEITER
+}
+
+// ============================================
+// Vehicle (Fahrzeug)
+// ============================================
+model Vehicle {
+  id                    String           @id @default(cuid())
+  vehicleNumber         Int              @unique @default(autoincrement())
+  slug                  String           @unique
+  
+  // Grunddaten
+  manufacturer          String
+  model                 String
+  variant               String?
+  vehicleType           VehicleType      @default(PKW)
+  condition             VehicleCondition @default(GEBRAUCHT)
+  status                VehicleStatus    @default(ENTWURF)
+  
+  // Identifikation
+  vin                   String?
+  hsn                   String?
+  tsn                   String?
+  licensePlate          String?
+  
+  // Daten
+  firstRegistration     DateTime?
+  mileage               Int              @default(0)
+  previousOwners        Int              @default(0)
+  
+  // Technik
+  fuelType              FuelType?
+  transmission          Transmission?
+  powerKW               Int?
+  powerPS               Int?
+  displacement          Int?
+  driveType             DriveType?
+  
+  // Ausstattung
+  exteriorColor         String?
+  interiorColor         String?
+  doors                 Int?
+  seats                 Int?
+  features              String[]
+  
+  // Preise
+  purchasePrice         Decimal?         @db.Decimal(10, 2)
+  sellingPrice          Decimal          @db.Decimal(10, 2)
+  vatType               VatType          @default(MWST)
+  
+  // Beschreibung
+  title                 String?
+  description           String?          @db.Text
+  
+  // Export
+  exportMobileDE        Boolean          @default(false)
+  exportAutoScout       Boolean          @default(false)
+  
+  // Standzeit
+  arrivalDate           DateTime         @default(now())
+  
+  // Relationen
+  images                VehicleImage[]
+  documents             Document[]
+  contracts             Contract[]
+  leads                 Lead[]
+  
+  createdBy             User             @relation(fields: [createdById], references: [id])
+  createdById           String
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+}
+
+model VehicleImage {
+  id          String   @id @default(cuid())
+  url         String
+  order       Int      @default(0)
+  vehicle     Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  vehicleId   String
+}
+
+enum VehicleType {
+  PKW
+  SUV
+  KOMBI
+  COUPE
+  CABRIO
+  LIMOUSINE
+  VAN
+}
+
+enum VehicleCondition {
+  NEU
+  GEBRAUCHT
+  JAHRESWAGEN
+  VORFUEHRWAGEN
+}
+
+enum VehicleStatus {
+  ENTWURF
+  AKTIV
+  RESERVIERT
+  VERKAUFT
+}
+
+enum FuelType {
+  BENZIN
+  DIESEL
+  ELEKTRO
+  HYBRID
+  LPG
+}
+
+enum Transmission {
+  AUTOMATIK
+  MANUELL
+}
+
+enum DriveType {
+  FRONT
+  HECK
+  ALLRAD
+}
+
+enum VatType {
+  MWST
+  DIFFERENZ
+}
+
+// ============================================
+// Customer (Kunde)
+// ============================================
+model Customer {
+  id              String         @id @default(cuid())
+  customerNumber  Int            @unique @default(autoincrement())
+  
+  type            CustomerType   @default(PRIVAT)
+  role            CustomerRole   @default(INTERESSENT)
+  
+  company         String?
+  salutation      String?
+  firstName       String?
+  lastName        String
+  
+  street          String?
+  zipCode         String?
+  city            String?
+  country         String         @default("Deutschland")
+  
+  phone           String?
+  email           String?
+  
+  notes           String?        @db.Text
+  
+  contracts       Contract[]
+  invoices        Invoice[]
+  documents       Document[]
+  
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+enum CustomerType {
+  PRIVAT
+  GEWERBE
+}
+
+enum CustomerRole {
+  INTERESSENT
+  KAEUFER
+  VERKAEUFER
+}
+
+// ============================================
+// Contract (Vertrag)
+// ============================================
+model Contract {
+  id              String          @id @default(cuid())
+  contractNumber  Int             @unique @default(autoincrement())
+  type            ContractType
+  
+  customer        Customer        @relation(fields: [customerId], references: [id])
+  customerId      String
+  vehicle         Vehicle         @relation(fields: [vehicleId], references: [id])
+  vehicleId       String
+  
+  priceNet        Decimal         @db.Decimal(10, 2)
+  vat             Decimal         @db.Decimal(10, 2)
+  priceGross      Decimal         @db.Decimal(10, 2)
+  deposit         Decimal         @default(0) @db.Decimal(10, 2)
+  
+  contractDate    DateTime        @default(now())
+  deliveryDate    DateTime?
+  
+  paymentTerms    String?         @db.Text
+  notes           String?         @db.Text
+  
+  // Rechtliche Checkboxen
+  isAccidentFree  Boolean         @default(true)
+  reducedLiability Boolean        @default(false)
+  hasWarranty     Boolean         @default(false)
+  
+  status          ContractStatus  @default(ENTWURF)
+  
+  invoices        Invoice[]
+  documents       Document[]
+  
+  createdBy       User            @relation(fields: [createdById], references: [id])
+  createdById     String
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+enum ContractType {
+  KAUFVERTRAG
+  ANKAUFVERTRAG
+}
+
+enum ContractStatus {
+  ENTWURF
+  AKTIV
+  ABGESCHLOSSEN
+  STORNIERT
+}
+
+// ============================================
+// Invoice (Rechnung)
+// ============================================
+model Invoice {
+  id              String         @id @default(cuid())
+  invoiceNumber   String         @unique
+  
+  customer        Customer       @relation(fields: [customerId], references: [id])
+  customerId      String
+  contract        Contract?      @relation(fields: [contractId], references: [id])
+  contractId      String?
+  
+  netAmount       Decimal        @db.Decimal(10, 2)
+  vatAmount       Decimal        @db.Decimal(10, 2)
+  grossAmount     Decimal        @db.Decimal(10, 2)
+  
+  invoiceDate     DateTime       @default(now())
+  dueDate         DateTime?
+  
+  status          InvoiceStatus  @default(OFFEN)
+  paidDate        DateTime?
+  
+  positions       InvoicePosition[]
+  documents       Document[]
+  
+  createdBy       User           @relation(fields: [createdById], references: [id])
+  createdById     String
+  createdAt       DateTime       @default(now())
+}
+
+model InvoicePosition {
+  id          String   @id @default(cuid())
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  invoiceId   String
+  description String
+  quantity    Int      @default(1)
+  unitPrice   Decimal  @db.Decimal(10, 2)
+  total       Decimal  @db.Decimal(10, 2)
+}
+
+enum InvoiceStatus {
+  ENTWURF
+  OFFEN
+  BEZAHLT
+  STORNIERT
+}
+
+// ============================================
+// Lead (Anfrage)
+// ============================================
+model Lead {
+  id          String     @id @default(cuid())
+  type        LeadType
+  status      LeadStatus @default(NEU)
+  
+  name        String
+  email       String
+  phone       String?
+  message     String     @db.Text
+  
+  vehicle     Vehicle?   @relation(fields: [vehicleId], references: [id])
+  vehicleId   String?
+  
+  createdAt   DateTime   @default(now())
+}
+
+enum LeadType {
+  FAHRZEUGANFRAGE
+  ANKAUFANFRAGE
+  KONTAKT
+}
+
+enum LeadStatus {
+  NEU
+  IN_BEARBEITUNG
+  ABGESCHLOSSEN
+}
+
+// ============================================
+// Document (Dokument)
+// ============================================
+model Document {
+  id          String       @id @default(cuid())
+  name        String
+  type        DocumentType
+  url         String
+  
+  vehicle     Vehicle?     @relation(fields: [vehicleId], references: [id])
+  vehicleId   String?
+  customer    Customer?    @relation(fields: [customerId], references: [id])
+  customerId  String?
+  contract    Contract?    @relation(fields: [contractId], references: [id])
+  contractId  String?
+  invoice     Invoice?     @relation(fields: [invoiceId], references: [id])
+  invoiceId   String?
+  
+  createdAt   DateTime     @default(now())
+}
+
+enum DocumentType {
+  KAUFVERTRAG
+  RECHNUNG
+  FAHRZEUGBRIEF
+  SONSTIGES
+}
+
+// ============================================
+// BlogPost (Blog)
+// ============================================
+model BlogPost {
+  id            String      @id @default(cuid())
+  slug          String      @unique
+  title         String
+  excerpt       String?
+  content       String      @db.Text
+  featuredImage String?
+  status        PostStatus  @default(ENTWURF)
+  publishedAt   DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+enum PostStatus {
+  ENTWURF
+  VEROEFFENTLICHT
+}

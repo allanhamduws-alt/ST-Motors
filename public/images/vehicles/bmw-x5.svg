@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bodyGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f2744;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="windowGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shadow -->
+  <ellipse cx="410" cy="365" rx="280" ry="15" fill="#000" opacity="0.2"/>
+  
+  <!-- Main body -->
+  <path d="M105 275 L135 190 L185 170 L330 158 L470 152 L615 160 L685 188 L715 230 L720 275 L710 315 L105 315 Z" fill="url(#bodyGrad3)"/>
+  
+  <!-- Windows -->
+  <path d="M185 185 L330 172 L335 250 L180 258 Z" fill="url(#windowGrad3)" opacity="0.92"/>
+  <path d="M350 170 L510 162 L540 185 L545 250 L350 250 Z" fill="url(#windowGrad3)" opacity="0.92"/>
+  <path d="M560 185 L615 192 L645 215 L650 250 L560 250 Z" fill="url(#windowGrad3)" opacity="0.92"/>
+  
+  <!-- BMW Kidney grille -->
+  <ellipse cx="120" cy="250" rx="12" ry="25" fill="#1e293b"/>
+  <ellipse cx="142" cy="250" rx="12" ry="25" fill="#1e293b"/>
+  <line x1="112" y1="235" x2="112" y2="265" stroke="#475569" stroke-width="1"/>
+  <line x1="120" y1="230" x2="120" y2="270" stroke="#475569" stroke-width="1"/>
+  <line x1="128" y1="235" x2="128" y2="265" stroke="#475569" stroke-width="1"/>
+  <line x1="134" y1="235" x2="134" y2="265" stroke="#475569" stroke-width="1"/>
+  <line x1="142" y1="230" x2="142" y2="270" stroke="#475569" stroke-width="1"/>
+  <line x1="150" y1="235" x2="150" y2="265" stroke="#475569" stroke-width="1"/>
+  
+  <!-- Headlights - Angel eyes style -->
+  <path d="M155 235 L175 232 L180 270 L155 273 Z" fill="#fef9c3" opacity="0.85"/>
+  <circle cx="165" cy="252" r="12" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.9"/>
+  <path d="M700 235 L715 238 L715 275 L695 272 Z" fill="#fecaca" opacity="0.85"/>
+  
+  <!-- Wheels -->
+  <circle cx="225" cy="315" r="60" fill="#1e293b"/>
+  <circle cx="225" cy="315" r="48" fill="#0f172a"/>
+  <circle cx="225" cy="315" r="32" fill="#334155"/>
+  <circle cx="225" cy="315" r="12" fill="#1e293b"/>
+  <!-- Star spoke pattern -->
+  <polygon points="225,260 230,290 225,295 220,290" fill="#64748b"/>
+  <polygon points="270,300 245,310 242,315 245,320 270,330" fill="#64748b"/>
+  <polygon points="270,330 245,320 242,315 245,310 270,300" fill="#64748b" transform="rotate(72,225,315)"/>
+  <polygon points="270,330 245,320 242,315 245,310 270,300" fill="#64748b" transform="rotate(144,225,315)"/>
+  <polygon points="270,330 245,320 242,315 245,310 270,300" fill="#64748b" transform="rotate(216,225,315)"/>
+  <polygon points="270,330 245,320 242,315 245,310 270,300" fill="#64748b" transform="rotate(288,225,315)"/>
+  
+  <circle cx="600" cy="315" r="60" fill="#1e293b"/>
+  <circle cx="600" cy="315" r="48" fill="#0f172a"/>
+  <circle cx="600" cy="315" r="32" fill="#334155"/>
+  <circle cx="600" cy="315" r="12" fill="#1e293b"/>
+  <polygon points="600,260 605,290 600,295 595,290" fill="#64748b"/>
+  <polygon points="645,300 620,310 617,315 620,320 645,330" fill="#64748b"/>
+  <polygon points="645,330 620,320 617,315 620,310 645,300" fill="#64748b" transform="rotate(72,600,315)"/>
+  <polygon points="645,330 620,320 617,315 620,310 645,300" fill="#64748b" transform="rotate(144,600,315)"/>
+  <polygon points="645,330 620,320 617,315 620,310 645,300" fill="#64748b" transform="rotate(216,600,315)"/>
+  <polygon points="645,330 620,320 617,315 620,310 645,300" fill="#64748b" transform="rotate(288,600,315)"/>
+  
+  <!-- Chrome accents -->
+  <line x1="105" y1="268" x2="710" y2="268" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="175" y1="170" x2="655" y2="160" stroke="#94a3b8" stroke-width="1.5"/>
+</svg>
+

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad1)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="#3b82f6" opacity="0.05"/>
+  <circle cx="1100" cy="530" r="250" fill="#8b5cf6" opacity="0.05"/>
+  <circle cx="900" cy="100" r="150" fill="#3b82f6" opacity="0.03"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1200" y2="500" stroke="#fff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff" stroke-width="1"/>
+  </g>
+  
+  <!-- Checkmark icon -->
+  <g transform="translate(150, 200)">
+    <circle cx="80" cy="80" r="70" fill="url(#accent1)" opacity="0.15"/>
+    <circle cx="80" cy="80" r="50" fill="url(#accent1)"/>
+    <path d="M55 80 L72 97 L105 64" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  
+  <!-- Magnifying glass icon -->
+  <g transform="translate(150, 350)">
+    <circle cx="50" cy="50" r="45" fill="#1e293b" stroke="#64748b" stroke-width="3"/>
+    <circle cx="45" cy="45" r="25" fill="none" stroke="#94a3b8" stroke-width="4"/>
+    <line x1="62" y1="62" x2="85" y2="85" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Document icon -->
+  <g transform="translate(90, 450)">
+    <rect x="10" y="10" width="60" height="80" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+    <line x1="25" y1="35" x2="55" y2="35" stroke="#64748b" stroke-width="2"/>
+    <line x1="25" y1="50" x2="55" y2="50" stroke="#64748b" stroke-width="2"/>
+    <line x1="25" y1="65" x2="45" y2="65" stroke="#64748b" stroke-width="2"/>
+    <path d="M50 10 L50 30 L70 30" fill="#334155"/>
+  </g>
+  
+  <!-- Text area -->
+  <text x="350" y="250" font-family="system-ui, sans-serif" font-size="58" font-weight="700" fill="#f8fafc">
+    5 Tipps für den
+  </text>
+  <text x="350" y="320" font-family="system-ui, sans-serif" font-size="58" font-weight="700" fill="url(#accent1)">
+    Gebrauchtwagenkauf
+  </text>
+  
+  <text x="350" y="400" font-family="system-ui, sans-serif" font-size="24" fill="#94a3b8">
+    Worauf Sie beim Kauf eines gebrauchten
+  </text>
+  <text x="350" y="435" font-family="system-ui, sans-serif" font-size="24" fill="#94a3b8">
+    Fahrzeugs achten sollten
+  </text>
+  
+  <!-- ST Motors Badge -->
+  <g transform="translate(1000, 520)">
+    <rect x="0" y="0" width="150" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="75" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#64748b">
+      ST MOTORS
+    </text>
+    <text x="75" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#475569">
+      Premium Automobile
+    </text>
+  </g>
+  
+  <!-- Accent line -->
+  <rect x="350" y="190" width="80" height="4" rx="2" fill="url(#accent1)"/>
+</svg>
+

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bodyGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="windowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main body -->
+  <path d="M120 280 L150 200 L200 180 L350 170 L450 165 L600 170 L680 190 L700 220 L710 280 L700 310 L120 310 Z" fill="url(#bodyGrad1)"/>
+  
+  <!-- Windows -->
+  <path d="M200 195 L350 185 L355 250 L195 255 Z" fill="url(#windowGrad)" opacity="0.9"/>
+  <path d="M365 184 L500 180 L520 195 L525 250 L365 250 Z" fill="url(#windowGrad)" opacity="0.9"/>
+  <path d="M535 195 L600 200 L620 210 L625 250 L535 250 Z" fill="url(#windowGrad)" opacity="0.9"/>
+  
+  <!-- Headlights -->
+  <ellipse cx="140" cy="250" rx="15" ry="20" fill="#ffd700" opacity="0.8"/>
+  <ellipse cx="690" cy="250" rx="12" ry="18" fill="#dc2626" opacity="0.8"/>
+  
+  <!-- Wheels -->
+  <circle cx="220" cy="310" r="55" fill="url(#wheelGrad)"/>
+  <circle cx="220" cy="310" r="35" fill="#1a1a1a"/>
+  <circle cx="220" cy="310" r="20" fill="#4a5568"/>
+  <circle cx="220" cy="310" r="8" fill="#2d3748"/>
+  
+  <circle cx="600" cy="310" r="55" fill="url(#wheelGrad)"/>
+  <circle cx="600" cy="310" r="35" fill="#1a1a1a"/>
+  <circle cx="600" cy="310" r="20" fill="#4a5568"/>
+  <circle cx="600" cy="310" r="8" fill="#2d3748"/>
+  
+  <!-- Chrome accents -->
+  <line x1="130" y1="265" x2="690" y2="265" stroke="#718096" stroke-width="2"/>
+  <line x1="195" y1="180" x2="620" y2="175" stroke="#718096" stroke-width="1"/>
+  
+  <!-- Grille -->
+  <rect x="125" y="220" width="25" height="40" fill="#2d3748" rx="3"/>
+  <line x1="130" y1="225" x2="130" y2="255" stroke="#4a5568" stroke-width="1"/>
+  <line x1="137" y1="225" x2="137" y2="255" stroke="#4a5568" stroke-width="1"/>
+  <line x1="144" y1="225" x2="144" y2="255" stroke="#4a5568" stroke-width="1"/>
+</svg>
+
