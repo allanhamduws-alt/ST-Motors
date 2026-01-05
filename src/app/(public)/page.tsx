@@ -56,18 +56,21 @@ const features = [
     title: "Geprüfte Qualität",
     description:
       "Jedes Fahrzeug durchläuft eine umfassende Prüfung vor der Aufnahme in unser Portfolio.",
+    image: "/images/features/quality-check.png",
   },
   {
     icon: Award,
     title: "Premium Auswahl",
     description:
       "Wir spezialisieren uns auf hochwertige SUVs und Limousinen von renommierten Herstellern.",
+    image: "/images/features/premium-selection.png",
   },
   {
     icon: Handshake,
     title: "Faire Preise",
     description:
       "Transparente Preisgestaltung ohne versteckte Kosten. Inzahlungnahme möglich.",
+    image: "/images/features/fair-price.png",
   },
 ]
 
@@ -275,16 +278,25 @@ export default async function HomePage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-secondary/30 hover:-translate-y-2 card-hover-border"
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-secondary/30 hover:-translate-y-2 card-hover-border overflow-hidden"
               >
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6">
-                    <feature.icon className="h-7 w-7 text-primary-foreground" />
+                {/* Thumbnail Image */}
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4 -mt-10 relative z-10 shadow-lg">
+                    <feature.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-display text-xl font-semibold mb-3">
+                  <h3 className="font-display text-xl font-semibold mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -332,13 +344,14 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="relative hidden lg:block">
-              <div className="aspect-square rounded-2xl bg-white/10 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4">
-                    <span className="font-display font-bold text-5xl">ST</span>
-                  </div>
-                  <p className="text-xl font-semibold">ST Motors GmbH</p>
-                  <p className="text-white/60">Premium Automobile</p>
+              <div className="aspect-square rounded-2xl bg-white/5 p-8 flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/logo-new.png"
+                    alt="ST Motors Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </div>
