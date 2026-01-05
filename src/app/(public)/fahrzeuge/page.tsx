@@ -8,6 +8,9 @@ import { SortSelect } from "@/components/vehicles/SortSelect"
 import { db } from "@/lib/db"
 import { Prisma } from "@prisma/client"
 
+// Force dynamic rendering - don't try to build statically
+export const dynamic = 'force-dynamic'
+
 interface SearchParams {
   hersteller?: string
   typ?: string

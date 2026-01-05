@@ -6,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { VehicleCard } from "@/components/vehicles/VehicleCard"
 import { db } from "@/lib/db"
 
+// Force dynamic rendering - don't try to build statically
+export const dynamic = 'force-dynamic'
+
 async function getFeaturedVehicles() {
   try {
     const vehicles = await db.vehicle.findMany({

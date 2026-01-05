@@ -9,15 +9,20 @@ export const metadata = {
   description: "Neuigkeiten, Tipps und Wissenswertes rund um Premium-Fahrzeuge von ST Motors GmbH",
 }
 
-export const revalidate = 60 // Revalidate every 60 seconds
+// Force dynamic rendering - don't try to build statically
+export const dynamic = 'force-dynamic'
 
 async function getBlogPosts() {
-  const posts = await db.blogPost.findMany({
-    where: { status: "VEROEFFENTLICHT" },
-    orderBy: { publishedAt: "desc" },
-    take: 20,
-  })
-  return posts
+  try {
+    const posts = await db.blogPost.findMany({
+      where: { status: "VEROEFFENTLICHT" },
+      orderBy: { publishedAt: "desc" },
+      take: 20,
+    })
+    return posts
+  } catch {
+    return []
+  }
 }
 
 export default async function BlogPage() {

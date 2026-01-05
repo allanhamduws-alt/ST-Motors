@@ -1,6 +1,9 @@
 import { MetadataRoute } from "next"
 import { db } from "@/lib/db"
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stmotors.de"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
