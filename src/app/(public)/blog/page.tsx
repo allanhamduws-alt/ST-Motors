@@ -59,7 +59,7 @@ export default async function BlogPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((post, index) => (
                 <Link key={post.id} href={`/blog/${post.slug}`}>
-                  <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                  <Card className="h-full overflow-hidden hover:shadow-xl transition-all duration-500 group card-hover-border hover:-translate-y-2">
                     {/* Bild */}
                     <div className="aspect-video overflow-hidden bg-zinc-100">
                       {post.featuredImage ? (
@@ -121,7 +121,7 @@ export default async function BlogPage() {
               Bleiben Sie informiert
             </h2>
             <p className="text-zinc-600 mb-6">
-              Haben Sie Fragen zu einem Fahrzeug oder möchten Sie mehr erfahren? 
+              Haben Sie Fragen zu einem Fahrzeug oder möchten Sie mehr erfahren?
               Kontaktieren Sie uns jederzeit.
             </p>
             <Link

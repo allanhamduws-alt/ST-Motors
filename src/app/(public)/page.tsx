@@ -111,7 +111,7 @@ export default async function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="text-base h-14 px-8 font-semibold">
+                <Button asChild size="lg" className="text-base h-14 px-8 font-semibold btn-hover-lift">
                   <Link href="/fahrzeuge">
                     Fahrzeuge entdecken
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,7 +121,7 @@ export default async function HomePage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-base h-14 px-8 font-semibold"
+                  className="text-base h-14 px-8 font-semibold btn-hover-lift"
                 >
                   <Link href="/verkaufen">Fahrzeug verkaufen</Link>
                 </Button>
@@ -156,19 +156,18 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Right - Hero Image Placeholder */}
+            {/* Right - Hero Image */}
             <div className="relative hidden lg:block">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-primary/5">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                      <Car className="h-12 w-12 text-primary/50" />
-                    </div>
-                    <p className="text-muted-foreground">Premium Fahrzeug</p>
-                  </div>
-                </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/vehicles/porsche-cayenne.png"
+                  alt="Premium SUV - Porsche Cayenne"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 {/* Floating Cards */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 animate-pulse">
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 animate-fade-in">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                       <CheckCircle className="h-6 w-6 text-green-600" />
@@ -202,7 +201,7 @@ export default async function HomePage() {
                 href={`/fahrzeuge?hersteller=${brand.name.toLowerCase()}`}
                 className="group flex flex-col items-center gap-3 py-4"
               >
-                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
                   <span className="font-display font-bold text-sm">
                     {brand.logo}
                   </span>
@@ -273,7 +272,7 @@ export default async function HomePage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-white to-secondary/30"
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-secondary/30 hover:-translate-y-2 card-hover-border"
               >
                 <CardContent className="p-8">
                   <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6">

@@ -32,13 +32,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand & Contact */}
           <div className="space-y-6">
-            <Image
-              src="/images/logo-white.svg"
-              alt="ST Motors - Premium Automobile"
-              width={200}
-              height={50}
-              className="h-12 w-auto"
-            />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                <span className="font-display font-bold text-xl text-white">ST</span>
+              </div>
+              <div>
+                <span className="font-display font-bold text-xl text-white">ST Motors</span>
+                <div className="text-xs text-white/60 tracking-wider">PREMIUM AUTOMOBILE</div>
+              </div>
+            </div>
             <p className="text-sm text-white/70 leading-relaxed">
               Ihr Spezialist für Premium SUVs und Limousinen in Lilienthal bei
               Bremen. Wir bieten ausgewählte Fahrzeuge von Range Rover, Mercedes,

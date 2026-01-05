@@ -64,22 +64,21 @@ export function Header() {
 
       {/* Main Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg"
-            : "bg-white"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          : "bg-white"
+          }`}
       >
         <div className="container-custom">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo-new.png"
                 alt="ST Motors - Premium Automobile"
                 width={200}
                 height={50}
-                className="h-12 w-auto transform group-hover:scale-105 transition-transform"
+                className="h-12 w-auto transform group-hover:scale-105 transition-transform duration-300"
                 priority
               />
             </Link>
@@ -118,7 +117,7 @@ export function Header() {
                   {/* Mobile Header */}
                   <div className="p-6 border-b">
                     <Image
-                      src="/images/logo.svg"
+                      src="/images/logo-new.png"
                       alt="ST Motors - Premium Automobile"
                       width={180}
                       height={45}

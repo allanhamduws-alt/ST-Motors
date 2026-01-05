@@ -39,10 +39,37 @@ const transmissionLabels: Record<string, string> = {
   MANUELL: "Schaltgetriebe",
 }
 
+// Mapping für generierte Studio-Bilder
+const generatedImages: Record<string, string> = {
+  "porsche": "/images/vehicles/porsche-cayenne.png",
+  "bmw": "/images/vehicles/bmw-x5.png",
+  "mercedes": "/images/vehicles/mercedes-gle.png",
+  "mercedes-benz": "/images/vehicles/mercedes-gle.png",
+  "audi": "/images/vehicles/audi-q7.png",
+  "volkswagen": "/images/vehicles/vw-touareg.png",
+  "vw": "/images/vehicles/vw-touareg.png",
+  "range rover": "/images/vehicles/range-rover-sport.png",
+  "land rover": "/images/vehicles/range-rover-sport.png",
+}
+
+function getVehicleImage(manufacturer: string): string | null {
+  const key = manufacturer.toLowerCase()
+  for (const [brand, imagePath] of Object.entries(generatedImages)) {
+    if (key.includes(brand)) {
+      return imagePath
+    }
+  }
+  return null
+}
+
 export function VehicleCard({ vehicle }: VehicleCardProps) {
-  const mainImage = vehicle.images.sort((a, b) => a.order - b.order)[0]?.url
-  const price = typeof vehicle.sellingPrice === "string" 
-    ? parseFloat(vehicle.sellingPrice) 
+  // Nutze generierte Bilder wenn verfügbar, sonst Datenbank-Bild
+  const generatedImage = getVehicleImage(vehicle.manufacturer)
+  const databaseImage = vehicle.images.sort((a, b) => a.order - b.order)[0]?.url
+  const mainImage = generatedImage || databaseImage
+
+  const price = typeof vehicle.sellingPrice === "string"
+    ? parseFloat(vehicle.sellingPrice)
     : vehicle.sellingPrice
 
   const formatPrice = (price: number) => {
@@ -69,18 +96,18 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
 
   return (
     <Link href={`/fahrzeuge/${vehicle.slug}`}>
-      <Card className="group vehicle-card-premium overflow-hidden border-0 shadow-md hover:shadow-2xl bg-white rounded-2xl">
+      <Card className="group vehicle-card-premium card-hover-border overflow-hidden border-0 shadow-md hover:shadow-2xl bg-white rounded-2xl">
         {/* Image Container with Premium Hover Effect */}
         <div className="relative aspect-[4/3] overflow-hidden">
           {/* Background gradient that shows on hover */}
           <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 transition-opacity duration-500" />
-          
+
           {/* Animated background pattern on hover */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05)_0%,transparent_60%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.03)_0%,transparent_50%)]" />
           </div>
-          
+
           {mainImage ? (
             <div className="relative w-full h-full">
               <Image
@@ -125,7 +152,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           >
             {vehicle.vatType === "MWST" ? "MwSt. ausweisbar" : "Differenzbesteuert"}
           </Badge>
-          
+
           {/* Hover overlay with "Details" button hint */}
           <div className="absolute inset-0 z-10 flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <span className="px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full text-sm font-medium text-zinc-800 shadow-lg flex items-center gap-2">

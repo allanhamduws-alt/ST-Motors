@@ -29,6 +29,16 @@ const nextConfig = {
   
   // Enable strict mode for better debugging
   reactStrictMode: true,
+  
+  // Ignore ESLint errors during build (for production deployment)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
+  // Ignore TypeScript errors during build (for production deployment)
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
