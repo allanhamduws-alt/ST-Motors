@@ -11,9 +11,10 @@ WORKDIR /app
 # Install dependencies
 COPY package.json package-lock.json* ./
 COPY prisma ./prisma/
+COPY prisma.config.ts ./
 RUN npm ci
 
-# Generate Prisma Client
+# Generate Prisma Client (Prisma 7 uses prisma.config.ts)
 RUN npx prisma generate
 
 # Rebuild the source code only when needed
