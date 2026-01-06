@@ -58,10 +58,6 @@ COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
 
-# Copy and prepare startup script
-COPY --from=builder /app/start.sh ./start.sh
-RUN chmod +x ./start.sh
-
 USER nextjs
 
 EXPOSE 3000
@@ -69,6 +65,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Startup script: Prisma db push + Server starten
-CMD ["sh", "start.sh"]
+CMD ["node", "server.js"]
 
