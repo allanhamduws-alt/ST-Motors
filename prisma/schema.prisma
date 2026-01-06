@@ -2,7 +2,8 @@
 // Vollständiges DMS (Dealer Management System)
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
+  engineType = "client"
 }
 
 datasource db {

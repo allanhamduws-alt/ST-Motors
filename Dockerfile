@@ -14,6 +14,9 @@ COPY prisma ./prisma/
 COPY prisma.config.ts ./
 RUN npm ci
 
+# Install sharp for image optimization in standalone mode
+RUN npm install sharp
+
 # Generate Prisma Client (Prisma 7 uses prisma.config.ts)
 RUN npx prisma generate
 
