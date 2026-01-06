@@ -79,7 +79,7 @@ export function VehicleList() {
     limit: 20,
     search: search || undefined,
     manufacturer: manufacturer || undefined,
-    status: status as "ENTWURF" | "AKTIV" | "RESERVIERT" | "VERKAUFT" | undefined,
+    status: (status || undefined) as "ENTWURF" | "AKTIV" | "RESERVIERT" | "VERKAUFT" | undefined,
     sortBy: "createdAt",
     sortOrder: "desc",
   })
